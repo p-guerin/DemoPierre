@@ -17,27 +17,27 @@
 	<link rel="stylesheet" href="css/font-site.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	
-	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	</head>
 	
 	<body>
 		<div class="open-s">
 			<i class="fa fa-2x fa-bars"></i>
 		</div>
-		<div id="nav-s" close="1">
+		<nav id="nav-s" close="1">
 			<div class="close-s">
 				<i class="fa fa-2x fa-times"></i>
 			</div>
-			<nav id="nav-m">
-				<ul>
-					<a href="#home" class="link"><li class="nav-link-m">Accueil</li></a>
-					<a href="#profil" class="link"><li class="nav-link-m">Profil</li></a>
-					<a href="#service" class="link"><li class="nav-link-m">Services</li></a>
-					<a href="#portfolio" class="link"><li class="nav-link-m">Portfolio</li></a>
-					<a href="#contact" class="link"><li class="nav-link-m">Contact</li></a>
-				</ul>
-			</nav>
-		</div>
+			
+			<ul>
+				<a href="#home" class="link"><li class="nav-link-s">Accueil</li></a>
+				<a href="#profil" class="link"><li class="nav-link-s">Profil</li></a>
+				<a href="#service" class="link"><li class="nav-link-s">Services</li></a>
+				<a href="#portfolio" class="link"><li class="nav-link-s">Portfolio</li></a>
+				<a href="#contact" class="link"><li class="nav-link-s">Contact</li></a>
+			</ul>
+		</nav>
+
 		<nav id="nav-l">
 			<ul>
 				<a href="#home" class="link"><li class="nav-link"><i class="fa fa-home"></i><p>Accueil</p></li></a>
@@ -53,7 +53,7 @@
 				<p class="job">DEVELOPPEUR WEB</p>
 		</header>
 
- 		<section id="profil">
+		<section id="profil">
  			<h1>Qui suis-je ?</h1>
  			<div class="title_deco"><i class="fa fa-asterisk"></i></div>
  			<div class="row">
@@ -105,8 +105,8 @@
  				</div>
  			</div>
  		</section>
-		
-		<section id="sepa-1" class="fixed-background img-2"></section>
+
+ 		<section id="sepa-1" class="fixed-background img-2"></section>
 
  		<section id="service">
  			<h1>Ce que je propose</h1>
@@ -129,8 +129,8 @@
 	 			</div>
  			</div>
  		</section>
-		
-		<section id="sepa-2" class="fixed-background img-3"></section>
+
+ 		<section id="sepa-2" class="fixed-background img-3"></section>
 
  		<section id="portfolio">
  			<h1>Portfolio</h1>
@@ -155,15 +155,13 @@
  	<footer>
  		
  	</footer>
-	
 
-	<script>
+ 	<script>
 	function chargementPage(){
-		var w = document.documentElement.clientWidth;
+	 	var w = document.documentElement.clientWidth;
 		var h = document.documentElement.clientHeight;
 		
 		var navs = document.getElementById('nav-s'),
-		navm = document.getElementById('nav-m'),
 		home = document.getElementById('home'),
 		sepa1 = document.getElementById('sepa-1'),
 		sepa2 = document.getElementById('sepa-2'),
@@ -174,9 +172,8 @@
 		contact = document.getElementById('contact');
 
 		navs.style.width = w+'px';
-		navs.style.minHeight = h+'px';
+		navs.style.height = h+'px';
 		navs.style.left = -w+'px';
-		navm.style.height = h+'px';
 		home.style.height = h+'px';
 		sepa1.style.height = h+'px';
 		sepa2.style.height = h+'px';
@@ -192,7 +189,6 @@
 		var h = document.documentElement.clientHeight;
 		
 		var navs = document.getElementById('nav-s'),
-		navm = document.getElementById('nav-m'),
 		home = document.getElementById('home'),
 		sepa1 = document.getElementById('sepa-1'),
 		sepa2 = document.getElementById('sepa-2'),
@@ -202,17 +198,16 @@
 		portfolio = document.getElementById('portfolio'),
 		contact = document.getElementById('contact');
 
-		var open = document.getElementById('nav-s').getAttribute('close');
+		var close = document.getElementById('nav-s').getAttribute('close');
 
 		navs.style.width = w+'px';
-		navs.style.minHeight = h+'px';
-		if(open == 1){
+		navs.style.height = h+'px';
+		if(close == 1){
 			navs.style.left = -w+'px';
 		}
 		else{
 			navs.style.left = 0+'px';
 		}
-		navm.style.height = h+'px';
 		home.style.height = h+'px';
 		sepa1.style.height = h+'px';
 		sepa2.style.height = h+'px';
